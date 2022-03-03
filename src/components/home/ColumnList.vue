@@ -35,7 +35,7 @@ export default defineComponent({
     const columnList = computed(() => {
       return props.list.map((item) => {
         if (!item.img) {
-          item.img = require('../assets/default-img.png')
+          item.img = require('../../assets/default.png')
         }
         return item
       })

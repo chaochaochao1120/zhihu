@@ -1,60 +1,12 @@
 <template>
-  <div class="container">
-    <GlobalHeader :userInfo="userInfo"></GlobalHeader>
-    <ColumnList :list="list"></ColumnList>
-  </div>
+  <router-view/>
 </template>
 
 <script lang="ts">
-import 'bootstrap/dist/css/bootstrap.min.css'
 import { defineComponent } from 'vue'
-import ColumnList, { columnProp } from '@/components/ColumnList.vue'
-import GlobalHeader, { userInfoInterface } from '@/components/GlobalHeader.vue'
-
-const userInfo: userInfoInterface = {
-  ifLogin: true,
-  name: '张三'
-}
-
-const testData: columnProp[] = [
-  {
-    id: '1',
-    title: 'test1的专栏',
-    desc: '这是的test1专栏，有一段非常有意思的简介，可以更新一下欧.',
-    img: require('./assets/logo.png')
-  },
-  {
-    id: '2',
-    title: 'test2的专栏',
-    desc: '这是的test2专栏，有一段非常有意思的简介，可以更新一下欧.',
-    img: require('./assets/logo.png')
-  },
-  {
-    id: '3',
-    title: 'test3的专栏',
-    desc: '这是的test3专栏，有一段非常有意思的简介，可以更新一下欧.这是的test3专栏，有一段非常有意思的简介，可以更新一下欧.',
-    img: require('./assets/logo.png')
-  },
-  {
-    id: '4',
-    title: 'test4的专栏',
-    desc: '这是的test4专栏，有一段非常有意思的简介，可以更新一下欧.'
-    // img: require('./assets/logo.png')
-  }
-]
 
 export default defineComponent({
-  name: 'app',
-  components: {
-    ColumnList,
-    GlobalHeader
-  },
-  setup () {
-    return {
-      list: testData,
-      userInfo: userInfo
-    }
-  }
+  name: 'app'
 })
 </script>
 
